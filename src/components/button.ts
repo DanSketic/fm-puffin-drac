@@ -1,4 +1,4 @@
-import  { style, element } from '@mkenzo_8/puffin'
+import  { style, element } from '@fm2/puffin'
 
 const ButtonWrapper = style`
 	&{

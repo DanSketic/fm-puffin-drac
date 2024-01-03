@@ -1,4 +1,4 @@
-import  { element, style, render } from '@mkenzo_8/puffin'
+import  { element, style, render } from '@fm2/puffin'
 
 function Option({ translated = false,content, name, checked = false, hiddenRadio = false, styled = true, key = '' }){
 	function selected(){

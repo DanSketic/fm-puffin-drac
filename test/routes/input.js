@@ -1,4 +1,4 @@
-import { element } from '@mkenzo_8/puffin'
+import { element } from '@fm2/puffin'
 import { Input } from '../../src/index'
 
 function InputRoute(){

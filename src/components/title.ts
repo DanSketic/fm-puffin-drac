@@ -1,4 +1,4 @@
-import { element,style } from '@mkenzo_8/puffin'
+import { element,style } from '@fm2/puffin'
 
 const h1Wrapper = style`
 	&{

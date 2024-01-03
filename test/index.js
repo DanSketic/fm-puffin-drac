@@ -1,4 +1,4 @@
-import { element, render, routerBox, routerLink } from '@mkenzo_8/puffin'
+import { element, render, routerBox, routerLink } from '@fm2/puffin'
 
 import { NavBar } from '../src/index'
 import HomeRoute from './routes/home'

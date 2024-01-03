@@ -22,7 +22,7 @@ npm install @mkenzo_8/puffin-drac
 
 Example:
 ```javascript 
-import { element } from '@mkenzo_8/puffin'
+import { element } from '@fm2/puffin'
 import { Button } from '@mkenzo_8/puffin-drac'
 
 const helloButton = () => {
