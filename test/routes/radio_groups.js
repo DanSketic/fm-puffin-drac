@@ -1,12 +1,12 @@
 import { element } from '@fm2/puffin'
 import { RadioGroup, Card } from '../../src/index'
 
-function RadioGroupRoute () {
-	function radioSelected(e){
+function RadioGroupRoute() {
+	function radioSelected(e) {
 		console.log(e.detail)
 	}
 	return element({
-		components:{
+		components: {
 			RadioGroup
 		}
 	})`
@@ -20,9 +20,9 @@ function RadioGroupRoute () {
 					key: 'test'
 				},
 				'Option 3',
-				() => element({components: { Card }})`<Card>test</Card>`,
+				() => element({ components: { Card } })`<Card>test</Card>`,
 				{
-					component: () => element({components: { Card }})`<Card>test</Card>`,
+					component: () => element({ components: { Card } })`<Card>test</Card>`,
 					styled: false,
 					hiddenRadio: true,
 					key: 'test2'

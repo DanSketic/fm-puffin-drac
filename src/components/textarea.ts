@@ -1,4 +1,4 @@
-import  { style, element } from '@fm2/puffin'
+import { style, element } from '@fm2/puffin'
 
 const TextAreaWrapper = style`
 	&{
@@ -34,7 +34,7 @@ const TextAreaWrapper = style`
 	}
 `
 
-function TextArea(){
+function TextArea() {
 	return element`<textarea class="${TextAreaWrapper}"/>`
 }
 

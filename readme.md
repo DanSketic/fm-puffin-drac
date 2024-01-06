@@ -1,7 +1,7 @@
 ### 💅🏻 Drac
 
-Drac is the Design system used in [Graviton Editor](https://github.com/Graviton-Code-Editor/Graviton-App). 
-This package is a set of [PuffinJS](https://github.com/PuffinJS/puffin) components.
+Drac is the Design system used in [Filing-Manager](https://github.com/DanSketic/Filing-Manager-App). 
+This package is a set of [PuffinJS](https://github.com/DanSketic/fm-puffin) components.
 
 ## 🌱 Components
 * Button
@@ -17,13 +17,13 @@ This package is a set of [PuffinJS](https://github.com/PuffinJS/puffin) componen
 
 Installation:
 ```sh
-npm install @mkenzo_8/puffin-drac
+npm install @fm2/puffin-drac
 ```
 
 Example:
 ```javascript 
 import { element } from '@fm2/puffin'
-import { Button } from '@mkenzo_8/puffin-drac'
+import { Button } from '@fm2/puffin-drac'
 
 const helloButton = () => {
 	return element({
@@ -42,15 +42,15 @@ I do not consider myself an UI designer.
 ## 🤔 Testing
 Clone the repository:
 ```shell
-git clone https://github.com/Graviton-Code-Editor/drac.git
+git clone https://github.com/DanSketic/fm-puffin-drac.git
 ```
 
 Install dependencies:
 ```shell
-npm install
+pnpm install
 ```
 
 Test it:
 ```shell 
-npm test
+pnpm test
 ```

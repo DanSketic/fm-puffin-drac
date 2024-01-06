@@ -1,4 +1,4 @@
-import { element,style } from '@fm2/puffin'
+import { element, style } from '@fm2/puffin'
 
 const h1Wrapper = style`
 	&{
@@ -67,22 +67,22 @@ const h6Wrapper = style`
 		color:var(--puffinTextColor,var(--textColor));
 	}
 `
-function h1(){
+function h1() {
 	return element`<h1 class="${h1Wrapper}"/>`
 }
-function h2(){
+function h2() {
 	return element`<h2 class="${h2Wrapper}"/>`
 }
-function h3(){
+function h3() {
 	return element`<h3 class="${h3Wrapper}"/>`
 }
-function h4(){
+function h4() {
 	return element`<h4 class="${h4Wrapper}"/>`
 }
-function h5(){
+function h5() {
 	return element`<h5 class="${h5Wrapper}"/>`
 }
-function h6(){
+function h6() {
 	return element`<h6 class="${h6Wrapper}"/>`
 }
 

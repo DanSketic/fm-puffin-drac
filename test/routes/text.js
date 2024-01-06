@@ -1,16 +1,16 @@
 import { element } from '@fm2/puffin'
-import { Text , Titles } from '../../src/index'
+import { Text, Titles } from '../../src/index'
 
-function TextRoute(){
+function TextRoute() {
 	return element({
-		components:{
+		components: {
 			Text,
-			H1:Titles.h1,
-			H2:Titles.h2,
-			H3:Titles.h3,
-			H4:Titles.h4,
-			H5:Titles.h5,
-			H6:Titles.h6
+			H1: Titles.h1,
+			H2: Titles.h2,
+			H3: Titles.h3,
+			H4: Titles.h4,
+			H5: Titles.h5,
+			H6: Titles.h6
 		}
 	})`
 	<div>
@@ -27,6 +27,6 @@ function TextRoute(){
 		<H6>This is an H6</H6>
 		<Text>This is a text</Text>
 	</div>`
-	}
+}
 
 export default TextRoute

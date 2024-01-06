@@ -48,7 +48,7 @@ const CardWrapper = style`
 	}
 `
 
-function Card(){
+function Card() {
 	return element`<div class="${CardWrapper}"/>`
 }
 

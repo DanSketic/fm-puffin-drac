@@ -1,4 +1,4 @@
-import  { element, style } from '@fm2/puffin'
+import { element, style } from '@fm2/puffin'
 
 const TextWrapper = style`
 	&{
@@ -14,7 +14,7 @@ const TextWrapper = style`
 	}
 `
 
-function Text(){
+function Text() {
 	return element`<p class="${TextWrapper}"></p>`
 }
 

@@ -1,4 +1,4 @@
-import  { style, element } from '@fm2/puffin'
+import { style, element } from '@fm2/puffin'
 
 const ButtonWrapper = style`
 	&{
@@ -17,10 +17,10 @@ const ButtonWrapper = style`
 		box-shadow:0px 0px 0px 0px rgba(0,0,0,0) ,0 0 0 0px var(--puffinAccent,var(--buttonAccentColor)); 
 		margin:5px;
 		border-radius:5px;
-		color:var(--puffinButtonText,var(--textColorpuffinTextColor,var(--)));
+		color:var(--puffinButtonText,var(--textColorpuffinTextColor,var(--textColor)));
 		font-size:13px;
 		-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
-    -webkit-focus-ring-color: rgba(255, 255, 255, 0); 
+		-webkit-focus-ring-color: rgba(255, 255, 255, 0); 
 	}
 	&:hover:not(:active){
 		cursor:pointer;
@@ -39,7 +39,7 @@ const ButtonWrapper = style`
 	}
 `
 
-function Button(){
+function Button() {
 	return element`<button class="${ButtonWrapper}"/>`
 }
 

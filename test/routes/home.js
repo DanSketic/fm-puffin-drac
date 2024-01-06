@@ -1,9 +1,9 @@
 import { element } from '@fm2/puffin'
 import { Text } from '../../src/index'
 
-function HomeRoute(){
+function HomeRoute() {
 	return element({
-		components:{
+		components: {
 			Text
 		}
 	})`

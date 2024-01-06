@@ -56,7 +56,6 @@ const App = element({
 				<TextAreaRoute/>
 			</div>
 		</routerBox>
-		
 	</div>
 `
 

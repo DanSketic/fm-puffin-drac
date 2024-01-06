@@ -1,4 +1,4 @@
-import  { style, element } from '@fm2/puffin'
+import { style, element } from '@fm2/puffin'
 
 const NavbarWrapper = style`
 	& {
@@ -37,22 +37,10 @@ const NavbarWrapper = style`
 	}
 `
 
-function mounted(){
-	const radios = this.children
-	for( const radio of radios){
-		radio.onclick = function(e){
-			for( const radio2 of radios){
-				radio2.classList.remove("active")
-			}
-			radio.classList.add("active")
-		}
-	}
-}
-
-function NavBar(){
+function NavBar() {
 	return element`
-<div class="${NavbarWrapper	}" mounted="${mounted}></div>
-`
+		<div class="${NavbarWrapper}"></div>
+	`
 }
 
 

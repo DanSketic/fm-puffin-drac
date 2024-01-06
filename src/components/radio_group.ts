@@ -1,21 +1,23 @@
-import  { element, style, render } from '@fm2/puffin'
+import { element, style, render } from '@fm2/puffin'
 
-function Option({ translated = false,content, name, checked = false, hiddenRadio = false, styled = true, key = '' }){
-	function selected(){
-		const event = new CustomEvent('radioSelected', { detail: {
-			target: this.parentElement,
-			content,
-			key
-		}})
+function Option({ translated = false, content, name, checked = false, hiddenRadio = false, styled = true, key = '' }) {
+	function selected() {
+		const event = new CustomEvent('radioSelected', {
+			detail: {
+				target: this.parentElement,
+				content,
+				key
+			}
+		})
 		this.parentElement.parentElement.parentElement.dispatchEvent(event)
 	}
-	
-	function mounted(){
-		if( checked ){
-			this.children[0].children[0].setAttribute('checked','')
+
+	function mounted() {
+		if (checked) {
+			this.children[0].children[0].setAttribute('checked', '')
 		}
-		this.setAttribute('hidden-radio',hiddenRadio.toString())
-		this.setAttribute('styled',styled.toString())
+		this.setAttribute('hidden-radio', hiddenRadio.toString())
+		this.setAttribute('styled', styled.toString())
 	}
 	const isLabel = typeof content === 'string'
 	return element`
@@ -23,11 +25,11 @@ function Option({ translated = false,content, name, checked = false, hiddenRadio
 			<div class="wrapper">
 				<input :click="${selected}" type="radio" name="${name}"></input>
 				<div class="circle"></div>
-				<p lang-string="${translated && isLabel ? content : ''}">${translated && isLabel ? '' : content }</p> 
+				<p lang-string="${translated && isLabel ? content : ''}">${translated && isLabel ? '' : content}</p> 
 			</div>
 		</label>
     `
-	
+
 }
 
 const RadioGroupWrapper = style`
@@ -104,37 +106,37 @@ const RadioGroupWrapper = style`
 		box-shadow:0px 0px 0px 2px var(--puffinRadioCircleBorderHovering,var(--radioCircleBorderHovering));        
 	}
 `
-function mounted(){
+function mounted() {
 	const target = this
-	if(target.getAttribute('direction') == null) target.setAttribute('direction', 'vertically')
-	if(target.getAttribute('styled') == null) target.setAttribute('styled', 'true')
+	if (target.getAttribute('direction') == null) target.setAttribute('direction', 'vertically')
+	if (target.getAttribute('styled') == null) target.setAttribute('styled', 'true')
 }
-function RadioGroup({ translated, options }){
+function RadioGroup({ translated, options }) {
 	const name = Math.random()
-	
+
 	return element`
 	<div mounted="${mounted}" class="${RadioGroupWrapper}">
 		${options.map(option => {
-			if(typeof option === 'string') return Option({ 
-				content: option, 
-				name,
-				translated
-			})
-			if(typeof option === 'object') return Option({ 
-				content: option.label || option.component(),
-				name,
-				checked: option.checked,
-				hiddenRadio: option.hiddenRadio,
-				styled: option.styled,
-				key: option.key,
-				translated
-			})
-			if(typeof option === 'function') return Option({ 
-				content: option(),
-				name,
-				translated
-			})
-		})}
+		if (typeof option === 'string') return Option({
+			content: option,
+			name,
+			translated
+		})
+		if (typeof option === 'object') return Option({
+			content: option.label || option.component(),
+			name,
+			checked: option.checked,
+			hiddenRadio: option.hiddenRadio,
+			styled: option.styled,
+			key: option.key,
+			translated
+		})
+		if (typeof option === 'function') return Option({
+			content: option(),
+			name,
+			translated
+		})
+	})}
 	</div>`
 }
 

@@ -1,4 +1,4 @@
-import  { style, element } from '@fm2/puffin'
+import { style, element } from '@fm2/puffin'
 
 const InputWrapper = style`
 	&{
@@ -32,7 +32,7 @@ const InputWrapper = style`
 	}
 `
 
-function Input(){
+function Input() {
 	return element`<input class="${InputWrapper}"/>`
 }
 

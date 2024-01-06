@@ -1,9 +1,9 @@
 import { element } from '@fm2/puffin'
 import { Card } from '../../src/index'
 
-function CardRoute(){
+function CardRoute() {
 	return element({
-		components:{
+		components: {
 			Card
 		}
 	})`

@@ -3,7 +3,7 @@ import { Button } from '../../src/index'
 
 function ButtonsRouter() {
 	return element({
-		components:{
+		components: {
 			Button
 		}
 	})`
