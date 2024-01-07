@@ -23,9 +23,12 @@ const ButtonWrapper = style`
 		-webkit-focus-ring-color: rgba(255, 255, 255, 0); 
 	}
 	&:hover:not(:active){
-		cursor:pointer;
-		transition:0.1s;
-		box-shadow:0px 1px 5px 2px rgba(0,0,0,.05) ,0 0 0 0px var(--puffinAccent,var(--buttonAccentColor));  
+		cursor: pointer;
+		transition: 0.1s;
+		border:0;
+		outline:0;
+		box-sizing: border-box;
+		box-shadow:0px 1px 5px 1px rgba(0,0,0,.05) ,0 0 0 1px var(--puffinAccent,var(--buttonAccentColor));  
 	}
 	&:active{
 		border:0;
