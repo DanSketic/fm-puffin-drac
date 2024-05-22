@@ -12,7 +12,7 @@ const TextAreaWrapper = style`
 		background:var(--puffinTextAreaBackground,var(--textAreaBackground));
 		border:0;
 		outline:0;
-		box-shadow:0px 0px 0px 0px rgba(0,0,0,0) ,0 0 0 0px var(--puffinTextAreaBorder,var(--textAreaBorder)); 
+		box-shadow:-1px 1px 5px 2px rgba(0,0,0,.05) ,0 0 0 2px var(--puffinTextAreaBorder,var(--textAreaBorder)); 
 		margin:5px;
 		border-radius:5px;
 		color:var(--puffinTextColor,var(--textColor));

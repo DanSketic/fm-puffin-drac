@@ -12,6 +12,7 @@ This package is a set of [PuffinJS](https://github.com/DanSketic/fm-puffin) comp
 * H1...H6 titles
 * Input
 * TextArea
+* Select
 
 ## 🍜 Usage
 

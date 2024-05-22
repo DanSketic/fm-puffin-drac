@@ -1,6 +1,6 @@
 {
 	"name": "@fm2/puffin-drac",
-	"version": "0.3.6",
+	"version": "0.3.7",
 	"description": "Drac Design System for PuffinJS",
 	"main": "bin/index.js",
 	"scripts": {

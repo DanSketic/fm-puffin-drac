@@ -6,6 +6,7 @@ import Titles from './components/title'
 import Card from './components/card'
 import Input from './components/input'
 import TextArea from './components/textarea'
+import Select from './components/select'
 
 export {
 	Button,
@@ -15,5 +16,6 @@ export {
 	Titles,
 	Card,
 	Input,
-	TextArea
+	TextArea,
+	Select
 }
