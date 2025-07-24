@@ -37,7 +37,7 @@ const NavbarWrapper = style`
 	}
 `
 
-function mounted() { // BAD
+function mounted() {
 	const radios = this.children
 	for (const radio of radios) {
 		radio.onclick = function (e) {
@@ -51,7 +51,7 @@ function mounted() { // BAD
 
 function NavBar() {
 	return element`
-		<div class="${NavbarWrapper}" mounted="${mounted}></div>
+		<div class="${NavbarWrapper}" mounted="${mounted}"></div>
 	`
 }
 
