@@ -37,22 +37,22 @@ const NavbarWrapper = style`
 	}
 `
 
-function mounted() {
-	const radios = this.children
-	for (const radio of radios) {
-		radio.onclick = function (e) {
-			for (const radio2 of radios) {
-				radio2.classList.remove("active")
-			}
-			radio.classList.add("active")
-		}
-	}
+function mounted(this: HTMLElement) {
+    const radios = this.children;
+    for (const radio of radios) {
+        radio.addEventListener("click", () => {
+            for (const radio2 of radios) {
+                radio2.classList.remove("active");
+            }
+            radio.classList.add("active");
+        });
+    }
 }
 
 function NavBar() {
-	return element`
-		<div class="${NavbarWrapper}" mounted="${mounted}"></div>
-	`
+    return element`
+        <div class="${NavbarWrapper}" mounted="${mounted}"></div>
+    `
 }
 
 export default NavBar

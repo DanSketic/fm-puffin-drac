@@ -1,7 +1,23 @@
 import { element, style, render } from '@fm2/puffin'
 
-function Option({ translated = false, content, name, checked = false, hiddenRadio = false, styled = true, key = '' }) {
-	function selected() {
+function Option({
+	translated = false,
+	content,
+	name,
+	checked = false,
+	hiddenRadio = false,
+	styled = true,
+	key = ''
+}: {
+	translated?: boolean,
+	content: string | HTMLElement | (() => HTMLElement),
+	name: string | number,
+	checked?: boolean,
+	hiddenRadio?: boolean,
+	styled?: boolean,
+	key?: string
+}) {
+	function selected(this: HTMLElement) {
 		const event = new CustomEvent('radioSelected', {
 			detail: {
 				target: this.parentElement,
@@ -9,10 +25,15 @@ function Option({ translated = false, content, name, checked = false, hiddenRadi
 				key
 			}
 		})
-		this.parentElement.parentElement.parentElement.dispatchEvent(event)
+		const parent1 = this.parentElement
+		const parent2 = parent1 && parent1.parentElement
+		const parent3 = parent2 && parent2.parentElement
+		if (parent3) {
+			parent3.dispatchEvent(event)
+		}
 	}
 
-	function mounted() {
+	function mounted(this: HTMLElement) {
 		if (checked) {
 			this.children[0].children[0].setAttribute('checked', '')
 		}
@@ -106,13 +127,31 @@ const RadioGroupWrapper = style`
 		box-shadow:0px 0px 0px 2px var(--puffinRadioCircleBorderHovering,var(--radioCircleBorderHovering));        
 	}
 `
-function mounted() {
+function mounted(this: HTMLElement) {
 	const target = this
 	if (target.getAttribute('direction') == null) target.setAttribute('direction', 'vertically')
 	if (target.getAttribute('styled') == null) target.setAttribute('styled', 'true')
 }
-function RadioGroup({ translated, options }) {
-	const name = Math.random()
+type RadioOption =
+	| string
+	| {
+		label?: string;
+		component?: () => HTMLElement;
+		checked?: boolean;
+		hiddenRadio?: boolean;
+		styled?: boolean;
+		key?: string;
+	}
+	| (() => HTMLElement);
+
+function RadioGroup({
+	translated,
+	options,
+}: {
+	translated?: boolean;
+	options: RadioOption[];
+}) {
+	const name = Math.random();
 
 	return element`
 	<div mounted="${mounted}" class="${RadioGroupWrapper}">
@@ -123,7 +162,7 @@ function RadioGroup({ translated, options }) {
 			translated
 		})
 		if (typeof option === 'object') return Option({
-			content: option.label || option.component(),
+			content: option.label ?? (option.component ? option.component() : ''),
 			name,
 			checked: option.checked,
 			hiddenRadio: option.hiddenRadio,
