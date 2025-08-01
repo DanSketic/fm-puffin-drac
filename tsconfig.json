@@ -1,10 +1,12 @@
 {
 	"compilerOptions": {
-		"target": "ES2019",
-		"module": "ESNext",
+		"target": "esnext",
+		"module": "esnext",
 		"declaration": true,
 		"declarationDir": "bin/types",
+		"emitDeclarationOnly": true,
 		"outDir": "bin",
+		"rootDir": "src",
 		"strict": true,
 		"esModuleInterop": true,
 		"moduleResolution": "node",
@@ -13,7 +15,6 @@
 		"types": []
 	},
 	"include": [
-		"src",
-		"test"
+		"src"
 	]
 }
